@@ -1,6 +1,7 @@
 package setup;
 
 import com.github.britooo.looca.api.core.Looca;
+import com.itextpdf.text.Anchor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -31,12 +32,12 @@ public class GerarPdf {
     }
 
     public void gerarPdf() {
-        String stringHardware = processador.toStringSimplified() + memoriaRam.toString() + usoDisco.exibirInformacoesDeDiscos() + sistema.toString() + janelas.toString();
+        String stringHardware = processador.toStringSimplified() + memoriaRam.toString() + usoDisco.exibirInformacoesDeDiscos() + sistema.toString() + "\nJanelas consumidas pelo sistema durante o tempo de captura: \n" + janelas.toString();
         try {
             PdfWriter.getInstance(document, new FileOutputStream(processador.getId() + ".pdf"));
             document.open();
 
-            document.add(new Paragraph("Aqui estão algumas informações básicas sobre sua máquina:"));
+            document.add(new Anchor("Aqui estão algumas informações básicas sobre sua máquina:"));
             document.add(new Paragraph(stringHardware));
         } catch(Exception e) {
             System.out.println(e);

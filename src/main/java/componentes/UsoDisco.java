@@ -43,6 +43,7 @@ public class UsoDisco {
             stringDisco += "| Modelo do disco: " + disco.getModelo() + " |\n";
             stringDisco += "| Tamanho do disco: " + disco.getTamanho() + " |\n";
         }
+        stringDisco += "______________________________\n";
         return stringDisco;
     }
 
