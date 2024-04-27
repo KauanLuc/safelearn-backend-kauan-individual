@@ -34,13 +34,16 @@ public class UsoDisco {
         }
     }
 
-    public void exibirInformacoesDeDiscos(){
+    public String exibirInformacoesDeDiscos(){
+        String stringDisco = "______________________________\n";
+        stringDisco += "| Informações de Discos      |\n";
+        stringDisco += "______________________________\n";
+        stringDisco += "| Quantidade de Discos: " + getQtdDiscos() + " |\n";
         for (Disco disco : discos) {
-            System.out.println(disco);
-
+            stringDisco += "| Modelo do disco: " + disco.getModelo() + " |\n";
+            stringDisco += "| Tamanho do disco: " + disco.getTamanho() + " |\n";
         }
-        System.out.println(modelosDisco);
-        System.out.println(tamanhosDisco);
+        return stringDisco;
     }
 
     public List<Disco> getDiscos() {

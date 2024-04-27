@@ -1,6 +1,7 @@
 
 import componentes.*;
 import dao.MaquinaDao;
+import setup.GerarPdf;
 import setup.InserirRegistros;
 import setup.Logar;
 
@@ -9,7 +10,7 @@ public class App {
         Logar logar = new Logar();
 
         logar.logar();
-        InserirRegistros inserirRegistros = new InserirRegistros();
+        GerarPdf gerarPdf = new GerarPdf();
     }
 }
 
