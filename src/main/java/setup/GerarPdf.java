@@ -32,7 +32,7 @@ public class GerarPdf {
     }
 
     public void gerarPdf() {
-        String stringHardware = processador.toStringSimplified() + memoriaRam.toString() + usoDisco.exibirInformacoesDeDiscos() + sistema.toString() + "\nJanelas consumidas pelo sistema durante o tempo de captura: \n" + janelas.toString();
+        String stringHardware = processador.toString() + memoriaRam.toString() + usoDisco.toString() + sistema.toString() + "\nJanelas consumidas pelo sistema durante o tempo de captura: \n" + janelas.toString();
         try {
             PdfWriter.getInstance(document, new FileOutputStream(processador.getId() + ".pdf"));
             document.open();
